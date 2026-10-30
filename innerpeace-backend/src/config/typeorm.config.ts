@@ -19,7 +19,9 @@ export class TypeOrmConfigService implements TypeOrmOptionsFactory {
             database: process.env.DB_NAME,
             autoLoadEntities: true,
             //not to use sync in prod
-            synchronize: process.env.NODE_ENV !== 'production',
+            synchronize: process.env.DB_SYNCHRONIZE
+                ? process.env.DB_SYNCHRONIZE === 'true'
+                : process.env.NODE_ENV !== 'production',
 
 
             ssl:

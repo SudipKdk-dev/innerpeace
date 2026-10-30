@@ -54,8 +54,9 @@ The easiest way to run the entire stack (PostgreSQL + Backend + Frontend) is wit
 docker compose up --build
 ```
 
-- **Frontend**: [http://localhost:8080](http://localhost:8080)
-- **Backend API**: [http://localhost:3000](http://localhost:3000)
+- **Frontend**: [http://localhost:8081](http://localhost:8081) (or custom port via `FRONTEND_PORT`)
+- **Backend API**: [http://localhost:3000](http://localhost:3000) (or custom port via `BACKEND_PORT`)
+- **Database (PostgreSQL)**: Port `5433` on host mapped to container `5432` (or custom port via `POSTGRES_PORT` to avoid conflict with local PostgreSQL)
 - **Swagger Documentation**: [http://localhost:3000/api](http://localhost:3000/api)
 
 ---

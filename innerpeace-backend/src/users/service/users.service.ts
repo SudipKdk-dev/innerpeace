@@ -103,7 +103,10 @@ export class UsersService {
 
     await this.pwResetRepo.save(tokenEntity);
 
-    const resetLink = `${process.env.FRONTEND_URL}/reset-password?token=${rawToken}`;
+    const baseUrl = (process.env.FRONTEND_URL || 'http://localhost:5173')
+      .replace(/\/+$/, '')
+      .replace(/\/reset-password$/, '');
+    const resetLink = `${baseUrl}/reset-password?token=${rawToken}`;
 
     await this.mailService.sendResetPassword(user.email, resetLink);
 

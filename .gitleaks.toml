@@ -1,0 +1,24 @@
+title = "InnerPeace Gitleaks Security Policy"
+
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Global allowlist for template environment files and documentation placeholders"
+paths = [
+  '''^\.env\.example$''',
+  '''^innerpeace-backend/\.env\.example$''',
+  '''^innerpeace-forntend/\.env\.example$''',
+  '''^innerpeace-backend/\.env\.docker$''',
+  '''^README\.md$''',
+  '''^package-lock\.json$'''
+]
+
+stopwords = [
+  "your_aws_access_key_id",
+  "your_aws_secret_access_key",
+  "your_app_password",
+  "change_this_to_a_secure_jwt_secret",
+  "fake_key",
+  "fake_secret"
+]
